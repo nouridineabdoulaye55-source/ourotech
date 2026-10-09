@@ -16,16 +16,17 @@ p{margin:0 0 1em}a{color:inherit}img{max-width:100%;height:auto;display:block}
 .o{border-color:var(--ac);color:var(--tx);background:transparent}.o:hover{background:var(--btn);border-color:var(--btn);color:var(--on)}
 .g{background:var(--gr);color:#fff}.g:hover{background:var(--grh)}
 header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--bd)}
-.nav{display:flex;align-items:center;gap:14px;height:68px}
+.nav{position:relative;display:flex;align-items:center;gap:14px;height:68px}
 .logo{display:flex;align-items:center;gap:8px;text-decoration:none;font:800 1.6rem "Trebuchet MS",sans-serif;letter-spacing:.14em;color:var(--tx)}.logo svg{width:28px;height:28px;color:var(--ac)}
-.menu{display:flex;gap:4px;margin-left:auto;align-items:center}.menu a:not(.btn){padding:10px 12px;text-decoration:none;border-radius:8px;color:var(--tx);font-weight:600}.menu a:not(.btn):hover{background:var(--bg2);text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--ac);text-decoration-thickness:2px}
+.menu{order:1;display:flex;gap:4px;margin-left:auto;align-items:center}.menu a:not(.btn){padding:10px 12px;text-decoration:none;border-radius:8px;color:var(--tx);font-weight:600}.menu a:not(.btn):hover{background:var(--bg2);text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--ac);text-decoration-thickness:2px}
 .menu .btn{min-height:44px;padding:.5em 1.1em}
 .ib{background:var(--card);border:2px solid var(--ui);color:var(--tx);width:46px;height:46px;border-radius:12px;cursor:pointer;display:grid;place-items:center;flex:none}.ib:hover{border-color:var(--ac);background:var(--bg2)}
 #theme .sun{display:block}#theme .moon{display:none}
 :root[data-theme=dark] #theme .sun{display:none}:root[data-theme=dark] #theme .moon{display:block}
 @media(prefers-color-scheme:dark){:root:not([data-theme]) #theme .sun{display:none}:root:not([data-theme]) #theme .moon{display:block}}
-#burger{display:none}
-@media(max-width:1000px){#burger{display:grid;margin-left:auto}.menu{position:fixed;inset:68px 0 auto 0;max-height:calc(100dvh - 68px);overflow-y:auto;flex-direction:column;align-items:stretch;gap:2px;background:var(--bg);padding:12px 4% 20px;border-bottom:2px solid var(--bd);box-shadow:var(--sh);transform:translateY(-120%);transition:transform .25s;margin:0;visibility:hidden}.menu.open{transform:none;visibility:visible}.menu a:not(.btn){font-size:1.1rem;padding:14px 12px;min-height:48px;display:flex;align-items:center}.menu .btn,.menu .ib{margin-top:8px}.menu .ib{width:100%}:root[data-theme=dark] #theme .sun{display:block}:root[data-theme=dark] #theme .moon{display:none}@media(prefers-color-scheme:dark){:root:not([data-theme]) #theme .sun{display:block}:root:not([data-theme]) #theme .moon{display:none}}}
+#burger{display:none;order:2}
+#theme{order:3}
+@media(max-width:1000px){#burger{display:grid;margin-left:auto}.menu{position:fixed;inset:68px 0 auto 0;max-height:calc(100dvh - 68px);overflow-y:auto;flex-direction:column;align-items:stretch;gap:2px;background:var(--bg);padding:12px 4% 20px;border-bottom:2px solid var(--bd);box-shadow:var(--sh);transform:translateY(-120%);transition:transform .25s;margin:0;visibility:hidden}.menu.open{transform:none;visibility:visible}.menu a:not(.btn){font-size:1.1rem;padding:14px 12px;min-height:48px;display:flex;align-items:center}.menu .btn{margin-top:8px}}
 .hero{position:relative;overflow:hidden;padding:clamp(56px,9vw,110px) 0;background:var(--bg)}
 .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .hero-img{border-radius:24px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;border:1px solid var(--bd);position:relative}
@@ -102,3 +103,5 @@ header{box-shadow:0 2px 14px rgba(23,33,31,.04)}
 	.fab{display:none}
 }
 @media(max-width:360px){.wrap{width:94%}.gal{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+@media(max-width:1000px){#theme{position:static;left:auto;top:auto;transform:none;margin-left:0;order:3;z-index:auto}#burger{order:2}}
+@media(max-width:360px){.nav{gap:10px}.nav .logo{font-size:1.35rem;letter-spacing:.08em}.nav .logo svg{width:24px;height:24px}}
